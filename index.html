@@ -55,104 +55,21 @@
   <!-- chat singole  -->
           <div class="closed-chats">
 
-            <div class="users d-flex">
+            <div v-for="contact in contacts" class="users d-flex">
               <div class="users-photos d-flex">
-                <img src="img/avatar_2.jpg" alt="">
+                <img :src="contact.avatar" alt="">
               </div>
               <div class=" chat-users relative">
                 <div>
-                  <div class="name">Fabio</div>
-                  <div class="chat-content">Lorem ipsum dolor sit amet.
-                  </div>
+                  <div class="name">{{contact.name}}</div>
+                  <!-- <div v-for="(message,indice) in contact.messages.length" class="chat-content">{{message.message}}
+                  </div> -->
                 </div>
                 <div class="time">16:05</div>
               </div>
 
             </div>
-            <div class="users d-flex">
-              <div class="users-photos d-flex">
-                <img src="img/avatar_3.jpg" alt="">
-              </div>
-              <div class=" chat-users relative">
-                <div>
-                  <div class="name">Samuele</div>
-                  <div class="chat-content">Lorem ipsum dolor sit amet.
-                  </div>
-                </div>
-                <div class="time">16:03</div>
-              </div>
-
-            </div>
-            <div class="users d-flex">
-              <div class="users-photos d-flex">
-                <img src="img/avatar_4.jpg" alt="">
-              </div>
-              <div class=" chat-users relative">
-                <div>
-                  <div class="name">Alessandro.B</div>
-                  <div class="chat-content">Lorem ipsum dolor sit amet.
-                  </div>
-                </div>
-                <div class="time">15:50</div>
-              </div>
-
-            </div>
-            <div class="users d-flex">
-              <div class="users-photos d-flex">
-                <img src="img/avatar_5.jpg" alt="">
-              </div>
-              <div class=" chat-users relative">
-                <div>
-                  <div class="name">Alessandro L.</div>
-                  <div class="chat-content">Lorem ipsum dolor sit amet.
-                  </div>
-                </div>
-                <div class="time">15:45</div>
-              </div>
-
-            </div>
-            <div class="users d-flex">
-              <div class="users-photos d-flex">
-                <img src="img/avatar_6.jpg" alt="">
-              </div>
-              <div class=" chat-users relative">
-                <div>
-                  <div class="name">Claudia</div>
-                  <div class="chat-content">Lorem ipsum dolor sit amet.
-                  </div>
-                </div>
-                <div class="time">15:40</div>
-              </div>
-
-            </div>
-            <div class="users d-flex">
-              <div class="users-photos d-flex">
-                <img src="img/avatar_7.jpg" alt="">
-              </div>
-              <div class=" chat-users relative">
-                <div>
-                  <div class="name">Federico</div>
-                  <div class="chat-content">Lorem ipsum dolor sit amet.
-                  </div>
-                </div>
-                <div class="time">15:22</div>
-              </div>
-
-            </div>
-            <div class="users d-flex">
-              <div class="users-photos d-flex">
-                <img src="img/avatar_8.jpg" alt="">
-              </div>
-              <div class=" chat-users relative">
-                <div>
-                  <div class="name">Davide</div>
-                  <div class="chat-content">Lorem ipsum dolor sit amet.
-                  </div>
-                </div>
-                <div class="time">15:15</div>
-              </div>
-
-            </div>
+            
 
 
 
