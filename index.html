@@ -55,15 +55,19 @@
   <!-- chat singole  -->
           <div class="closed-chats">
 
-            <div v-for="contact in contacts" class="users d-flex">
+           <div
+            
+             v-for="(contact,indice) in contacts"
+             @click="counter=indice"
+             class="users d-flex">
               <div class="users-photos d-flex">
                 <img :src="contact.avatar" alt="">
               </div>
               <div class=" chat-users relative">
                 <div>
                   <div class="name">{{contact.name}}</div>
-                  <!-- <div v-for="(message,indice) in contact.messages.length" class="chat-content">{{message.message}}
-                  </div> -->
+                  <div  class="chat-content">{{contact.messages[contact.messages.length-1].message}}
+                  </div>
                 </div>
                 <div class="time">16:05</div>
               </div>
@@ -88,11 +92,11 @@
         <div class="col-convs">
           <div class="michele  d-flex">
             <div class="profile-pictures">
-              <img src="img/avatar_1.jpg" alt="">
+              <img src=""alt="">
             </div>
             <div class=" info d-flex">
               <div>
-                <div class="name">Michele </div>
+                <div class="name">{{contacts[counter].name}} </div>
                 <div class="access">Ultimo accesso oggi alle 16:26
                 </div>
               </div>
@@ -106,12 +110,20 @@
 
           </div>
 
-
-          <div class="open-chat  d-flex">
-            <div class="container-chat d-flex">
-              <div class="sent relative ">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda odio dignissimos consequatur culpa doloremque velit, voluptatem officiis a explicabo, inventore, vero ratione maiores soluta non perferendis voluptate quaerat odit molestiae.
-                <div class="time-open">16:13</div>
+<!--  -->
+          <div class="open-chat  d-flex" >
+            <div  class="container-chat d-flex" >
+              <div
+                :class="mess.status==='sent'?'sent':'received'"
+                class=" sent relative "
+                v-for="mess in contacts[counter].messages">
+                {{mess.message}}
+                
+                
+                
+                
+                
+                <div class="time-open">{{mess.date}}</div>
                 <div class="chev">
                   <i class="fa-solid fa-chevron-down"></i>
                   <div class="hidden-menu">
@@ -122,17 +134,7 @@
               
               </div>
               
-              <div class="received  relative">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus doloremque nisi ut ipsum nihil dicta aperiam, tenetur voluptatum at nobis placeat repellendus inventore omnis natus est cumque sequi eaque provident.
-                <div class="time-open">16:13</div>
-                <div class="chev">
-                  <i class="fa-solid fa-chevron-down"></i>
-                  <div class="hidden-menu">
-                    <div>Info messaggio</div>
-                    <div>Cancella messaggio </div>
-                  </div>
-                </div>
-              </div>
+             
 
             </div>
 

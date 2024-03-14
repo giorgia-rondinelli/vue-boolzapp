@@ -209,6 +209,7 @@ right: 0;
 .received{
  
  background-color: white;
+ align-self: start;
 }
 
 .time-open{
