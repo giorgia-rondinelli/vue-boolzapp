@@ -47,7 +47,11 @@
             <div class="search d-flex">
               <div><i class="fa-solid fa-magnifying-glass"></i></div>
               <div class="search-bar">
-                <input class="" type="text" placeholder="Cerca o inizia una nuova chat">
+                <input
+                  class=""
+                  type="text"
+                  placeholder="Cerca o inizia una nuova chat"
+                  v-model="ricerca">
               </div>
             </div>
           </div>
@@ -144,7 +148,13 @@
           <div class="text d-flex">
             <div class="add"><i class="fa-regular fa-face-smile"></i></div>
             <div class="write ">
-              <input class="" type="text" placeholder="Scrivi un messaggio">
+              <input
+              @keyup.enter="addMess(counter)" 
+               
+                class=""
+                type="text"
+                placeholder="Scrivi un messaggio"
+                v-model="text">
             </div>
             <div class="add"><i class="fa-solid fa-microphone"></i></div>
 

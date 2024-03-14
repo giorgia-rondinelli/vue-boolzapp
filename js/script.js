@@ -169,13 +169,26 @@ createApp({
         }
       ],
       counter:0,
-      
+      text:'',
+      ricerca:''
       
 
     }
   },
   methods:{
+    addMess(indice){
+      this.contacts[indice].messages.push({date:'',message:this.text,status:'sent'})
 
-  }
+      setTimeout(()=>{
+        this.contacts[indice].messages.push({date:'',message:'ok!',status:'received'})
+
+      },1000
+      )
+    },
+
+    
+
+  },
+ 
 }).mount('#app')
 
