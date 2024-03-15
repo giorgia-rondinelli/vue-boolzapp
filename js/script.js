@@ -1,4 +1,4 @@
-
+const{DateTime}= luxon
 const {createApp}=Vue 
 
 
@@ -170,17 +170,19 @@ createApp({
       ],
       counter:0,
       text:'',
-      ricerca:''
-      
+      ricerca:'',
+      activeContact:{},
+      dinData:''
 
     }
   },
   methods:{
     addMess(indice){
-      this.contacts[indice].messages.push({date:'',message:this.text,status:'sent'})
+      this.contacts[indice].messages.push({date:this.dinData,
+      message:this.text,status:'sent'})
 
       setTimeout(()=>{
-        this.contacts[indice].messages.push({date:'',message:'ok!',status:'received'})
+        this.contacts[indice].messages.push({date:this.dinData,message:'ok!',status:'received'})
 
       },1000
       )
@@ -189,6 +191,19 @@ createApp({
     
 
   },
+  computed: {
+
+    filterContacts() {
+      return this.contacts.filter((contact) => contact.name.toLowerCase().includes(this.ricerca.toLowerCase()))
+    }
+  },
+  mounted(){
+    this.dinData=DateTime.now()
+    .setLocale('it')
+    .toFormat('MM/dd/yyyy  hh:mm:ss' )
+  }
+
+ 
  
 }).mount('#app')
 

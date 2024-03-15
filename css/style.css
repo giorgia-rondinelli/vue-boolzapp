@@ -175,7 +175,7 @@ right: 0;
   margin: 0 20px;
 }
 
-.users:hover{
+.active{
   background-color: #dadbd4b6;
 }
 

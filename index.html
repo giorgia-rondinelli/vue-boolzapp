@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<script src="
+https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js
+"></script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="assets/css/tablet.css" media="screen and (max-width: 991px)">
 </head>
@@ -61,7 +64,7 @@
 
            <div
             
-             v-for="(contact,indice) in contacts"
+             v-for="(contact,indice) in filterContacts"
              @click="counter=indice"
              class="users d-flex">
               <div class="users-photos d-flex">
